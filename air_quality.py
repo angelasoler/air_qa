@@ -57,7 +57,8 @@ address = st.text_input("Digite seu endereço ou cidade:")
 
 if address:
     lat, lon = get_coordinates(address)
-    if lat and lon:
+    # Check that lat and lon are not None to avoid ignoring valid "0" values
+    if lat is not None and lon is not None:
         token = AQICN_TOKEN
         data = get_air_quality(lat, lon, token)
         if data:
