@@ -8,7 +8,7 @@ load_dotenv()
 
 AQICN_TOKEN = os.getenv('AQICN_TOKEN')
 
-# Funções definidas anteriormente
+# Funções utilitárias
 def get_coordinates(address):
     geolocator = Nominatim(user_agent="air_quality_app")
     location = geolocator.geocode(address)
